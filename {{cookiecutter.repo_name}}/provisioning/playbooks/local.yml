@@ -1,0 +1,14 @@
+##
+# Local playbook
+# - required system packages installation
+# - db installation and creation
+# - webapp initialization (requirements, migrations, repository)
+##
+---
+- hosts: localhost
+  vars:
+    repo_name: {{ cookiecutter.repo_name }}
+    core_name: {{ cookiecutter.core_name }}
+  roles:
+    - database
+    - webapp
